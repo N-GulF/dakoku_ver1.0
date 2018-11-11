@@ -20,6 +20,20 @@
     "hubot-slack": "^4.5.5"
   },
   "engines": {
-    "node": "0.10.x"
-  }
+    "node": "11.1.0"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N-GulF/dakoku_ver1.0.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N-GulF/dakoku_ver1.0/issues"
+  },
+  "homepage": "https://github.com/N-GulF/dakoku_ver1.0#readme"
 }
