@@ -25,7 +25,7 @@ module.exports = (robot) ->
 	robot.respond /test/i, (msg) ->
 		msg.reply "あにきテスト"
 		@exec = require('child_process').exec
-		command = "osascript /Users/Shota/dakoku_ver1.0/出社バッチ.scpt"
+		command = "osascript /出社バッチ.scpt"
 		msg.send "Command: #{command}"
 		@exec command, (error, stdout, stderr) ->
 	    msg.reply "ダメやんw" if error?
