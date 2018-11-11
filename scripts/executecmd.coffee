@@ -31,3 +31,14 @@ module.exports = (robot) ->
 	    msg.reply "ダメやんw" if error?
 	    msg.reply "退社させといたw" if stdout?
 	    msg.reply "えwwダメやんw" if stderr?
+
+
+robot.respond /hello/i, (msg) ->
+		msg.reply "helloテスト"
+		@exec = require('child_process').exec
+		command = "osascript hello.scpt"
+		msg.send "Command: #{command}"
+		@exec command, (error, stdout, stderr) ->
+	    msg.reply "ダメやんw" if error?
+	    msg.reply "退社させといたw" if stdout?
+	    msg.reply "えwwダメやんw" if stderr?
