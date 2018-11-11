@@ -21,3 +21,13 @@ module.exports = (robot) ->
 	    msg.reply "ダメやんw" if error?
 	    msg.reply "退社させといたw" if stdout?
 	    msg.reply "えwwダメやんw" if stderr?
+	    
+	robot.respond /test/i, (msg) ->
+		msg.reply "あにきテスト"
+		@exec = require('child_process').exec
+		command = "osascript /Users/Shota/dakoku_ver1.0/出社バッチ.scpt"
+		msg.send "Command: #{command}"
+		@exec command, (error, stdout, stderr) ->
+	    msg.reply "ダメやんw" if error?
+	    msg.reply "退社させといたw" if stdout?
+	    msg.reply "えwwダメやんw" if stderr?
