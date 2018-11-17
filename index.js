@@ -60,13 +60,14 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
                         "entry.551857105_minute": MI
                           }
                     }, function (error, response, body) {
-                    console.log(body);  
-                });
-                // replyMessage()で返信し、そのプロミスをevents_processedに追加。
+                    console.log(body);
+                    // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
                     text: body
-                }));
+                })); 
+                });
+                
             }
         }
     });
