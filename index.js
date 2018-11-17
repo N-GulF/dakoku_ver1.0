@@ -36,19 +36,28 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
                 var request = require('request');
 
                 var webclient = require("request");
+                
+                require('date-utils');
+                
+                var dt = new Date();
+                var YYYY = dt.toFormat("YYYY");
+                var MM = dt.toFormat("MM");
+                var DD = dt.toFormat("DD");
+                var HH = dt.toFormat("HH24");
+                var MI = dt.toFormat("MI");
  
                 webclient.get({
                     url: "https://docs.google.com/forms/d/14JZkRLaUFCkdfUXpWSt00hfaKYnXwS_QcdcaapoEJTw/formResponse",
                          qs: {
                            c: "0",
                            w: "1",
-                        "entry.458666233_year": "1993",
-                        "entry.458666233_month": "10",
-                        "entry.458666233_day": "10",
-                        "entry.963651361": "めんでぃー",
-                        "entry.820423629": "てすと",
-                        "entry.551857105_hour": "10",
-                        "entry.551857105_minute": "10"
+                        "entry.458666233_year": YYYY,
+                        "entry.458666233_month": MM,
+                        "entry.458666233_day": DD,
+                        "entry.963651361": "date-utilsテスト",
+                        "entry.820423629": "いけるかな",
+                        "entry.551857105_hour": HH,
+                        "entry.551857105_minute": MI
                           }
                     }, function (error, response, body) {
                     console.log(body);  
