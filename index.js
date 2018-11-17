@@ -37,6 +37,8 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
 
                 var webclient = require("request");
                 
+                var body = ''; 
+                
                 require('date-utils');
                 
                 var dt = new Date();
@@ -61,13 +63,13 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
                           }
                     }, function (error, response, body) {
                     console.log(body);
-                    // replyMessage()で返信し、そのプロミスをevents_processedに追加。
+                    this.body = body;  
+                });
+                // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
                     text: body
-                })); 
-                });
-                
+                }));
             }
         }
     });
