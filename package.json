@@ -5,6 +5,8 @@
   "author": "Shota shotahmku@yahoo.co.jp",
   "description": "That's what I like",
   "dependencies": {
+    "@line/bot-sdk": "^6.3.0",
+    "express": "^4.16.4",
     "hubot": "^3.1.1",
     "hubot-diagnostics": "^1.0.0",
     "hubot-google-images": "^0.2.7",
