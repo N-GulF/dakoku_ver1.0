@@ -37,8 +37,6 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
 
                 var webclient = require("request");
                 
-                var body1 = ''; 
-                
                 require('date-utils');
                 
                 var dt = new Date();
@@ -63,12 +61,11 @@ server.post('/webhook', line.middleware(line_config), (req, res, next) => {
                           }
                     }, function (error, response, body) {
                     console.log(body);
-                    body1 = body;  
                 });
                 // replyMessage()で返信し、そのプロミスをevents_processedに追加。
                 events_processed.push(bot.replyMessage(event.replyToken, {
                     type: "text",
-                    text: body1.toString()
+                    text: "がんばれ"
                 }));
             }
         }
